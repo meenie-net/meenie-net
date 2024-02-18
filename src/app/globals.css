@@ -17,17 +17,24 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  font: 14px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  color: #5d9e8d;
+  background-color: antiquewhite;
+}
+.inner-html {
+  color: gray;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.inner-html a {
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: gray;
+}
+.inner-html a:hover {
+  color: black;
 }
