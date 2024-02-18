@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const Header = () => {
-  const pathName = usePathname();
+  const pathName = usePathname().split("/");
   console.log("pathName", pathName);
   const menu = [
     {
@@ -13,6 +13,10 @@ const Header = () => {
     {
       name: "Projects",
       target: "/projects",
+    },
+    {
+      name: "Blogs",
+      target: "/blogs",
     },
     {
       name: "About Me",
@@ -28,7 +32,9 @@ const Header = () => {
             <li
               key={index}
               className={`hover:text-black ${
-                item.target === pathName ? "text-black" : "text-gray-300"
+                pathName[1] === item.target.slice(1)
+                  ? "text-black"
+                  : "text-gray-300"
               }`}
             >
               <a href={item.target}>{item.name}</a>
