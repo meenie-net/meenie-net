@@ -16,6 +16,10 @@
   }
 }
 
+@layer components {
+  
+}
+
 body {
   min-height: 100vh;
   font: 14px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;

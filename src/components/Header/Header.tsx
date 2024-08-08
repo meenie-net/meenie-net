@@ -1,10 +1,18 @@
 "use client";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import Logo from "../Logo/Logo";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
 const Header = () => {
   const pathName = usePathname().split("/");
-  console.log("pathName", pathName);
   const menu = [
     {
       name: "Home",
@@ -14,35 +22,31 @@ const Header = () => {
       name: "Projects",
       target: "/projects",
     },
-    {
-      name: "Blogs",
-      target: "/blogs",
-    },
-    {
-      name: "About Me",
-      target: "/about",
-    },
   ];
   return (
-    <div className="sticky top-0 border-b-2 bg-white z-10">
-      <div className="flex items-center justify-between max-w-[70rem] mx-auto">
-        <div className="mr-10 text-3xl">Meenie</div>
-        <ul className="flex gap-6 my-8">
-          {menu.map((item, index) => (
-            <li
-              key={index}
-              className={`hover:text-black ${
-                pathName[1] === item.target.slice(1)
-                  ? "text-black"
-                  : "text-gray-300"
-              }`}
-            >
-              <a href={item.target}>{item.name}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <Navbar isBordered className="z-50">
+      <NavbarBrand>
+        <Link href={"/"}>
+          <Logo />
+        </Link>
+      </NavbarBrand>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {menu.map((item, index) => (
+          <NavbarItem
+            key={index}
+            isActive={pathName[1] === item.target.slice(1)}
+          >
+            <Link color="foreground" href={item.target}>
+              {item.name}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      <NavbarContent className="items-center" justify="end">
+        <ThemeSwitcher></ThemeSwitcher>
+      </NavbarContent>
+    </Navbar>
   );
 };
 
