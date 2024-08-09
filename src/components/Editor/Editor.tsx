@@ -22,7 +22,7 @@ function WangEditor(props: {
       onLoad().then((result) => {
         setHtml(result);
       });
-  }, []);
+  }, [onLoad]);
 
   // 工具栏配置
   const toolbarConfig: Partial<IToolbarConfig> = {}; // TS 语法

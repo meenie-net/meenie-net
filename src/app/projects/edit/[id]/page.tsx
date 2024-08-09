@@ -13,7 +13,7 @@ import {
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
-function page({ params }: { params: { id: string } }) {
+function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
   // editor 实例
   const [editor, setEditor] = useState<IDomEditor | null>(null); // TS 语法
@@ -21,9 +21,6 @@ function page({ params }: { params: { id: string } }) {
 
   // 编辑器内容
   const [html, setHtml] = useState(params.id);
-
-  // 模拟 ajax 请求，异步设置 html
-  useEffect(() => {}, []);
 
   // 工具栏配置
   const toolbarConfig: Partial<IToolbarConfig> = {}; // TS 语法
@@ -76,4 +73,4 @@ function page({ params }: { params: { id: string } }) {
   );
 }
 
-export default page;
+export default Page;

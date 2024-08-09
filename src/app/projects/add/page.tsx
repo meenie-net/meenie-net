@@ -17,7 +17,7 @@ import {
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-function page() {
+function Page() {
   const router = useRouter();
   // editor 实例
   const [editor, setEditor] = useState<IDomEditor | null>(null); // TS 语法
@@ -121,4 +121,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
