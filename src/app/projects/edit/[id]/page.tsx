@@ -1,6 +1,4 @@
 "use client";
-import "@wangeditor/editor/dist/css/style.css"; // 引入 css
-
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import {

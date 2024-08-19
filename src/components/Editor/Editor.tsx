@@ -1,3 +1,4 @@
+"use client";
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css
 
 import React, { useState, useEffect } from "react";
