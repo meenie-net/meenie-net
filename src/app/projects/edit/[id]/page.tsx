@@ -15,7 +15,7 @@ const Editor = dynamic(() => import("../../../../components/Editor/Editor"), {
   ssr: false,
 });
 
-function page({ params }: { params: { id: string } }) {
+function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
 
   return (
@@ -36,4 +36,4 @@ function page({ params }: { params: { id: string } }) {
   );
 }
 
-export default page;
+export default Page;

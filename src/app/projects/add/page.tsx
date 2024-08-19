@@ -17,7 +17,7 @@ const Editor = dynamic(() => import("../../../components/Editor/Editor"), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });
-function page() {
+function Page() {
   const router = useRouter();
 
   const tags = [
@@ -73,4 +73,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

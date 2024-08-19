@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const projects = [
     {
       id: "1",
@@ -136,4 +136,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
